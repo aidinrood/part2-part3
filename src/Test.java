@@ -4,33 +4,33 @@ import org.junit.Before;
 
 public class Test {
 	
-	ClassTwo class2= new ClassTwo();
-	ClassOne class1=new ClassOne();
+	Tracker tracker= new Tracker();
+	Reader reader=new Reader();
 	
 
 	@org.junit.Test
 	public void testPrintValue() {
-		class1.write("this is test results");
+		reader.write("this is test results");
 	}
 
 	@org.junit.Test
 	public void getNoOfChars() {
-		assertEquals("Test No Of Chars ",4, class2.getNoOfChars("zain"));
+		assertEquals("Test No Of Chars ",4, tracker.getNoOfChars("zain"));
 		
 	}
 
 	@org.junit.Test
 	public void testGetLineCounter() {
-		class2.incrementLineCounter();
-		assertEquals("Text Line counter ",1, class2.getNoOfLines());
+		tracker.incrementLineCounter();
+		assertEquals("Text Line counter ",1, tracker.getNoOfLines());
 	}
 
 	@org.junit.Test
 	public void testIncrementLineCounter() {
-		class2.incrementLineCounter();
-        class2.incrementLineCounter();
-        class2.incrementLineCounter();
-        assertEquals("Test Line counter ",4, class2.getNoOfLines());
+		tracker.incrementLineCounter();
+		tracker.incrementLineCounter();
+        tracker.incrementLineCounter();
+        assertEquals("Test Line counter ",4, tracker.getNoOfLines());
 	}
 
 }
